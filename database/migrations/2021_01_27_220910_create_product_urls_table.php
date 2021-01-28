@@ -13,8 +13,8 @@ class CreateProductUrlsTable extends Migration
      */
     public function up()
     {
-        Schema::create('producttourl', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('urltoproduct', function (Blueprint $table) {
+            $table->increments('id')->primary();
             $table->string('url');
             $table->string('sku');
             $table->string('description')->null();

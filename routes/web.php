@@ -21,9 +21,7 @@ Route::resource('products', ProductController::class);
 Route::resource('urls', UrlController::class);
 Route::resource('stores', StoreController::class);
 Route::resource('storedproducts', StoredController::class);
-
-Route::get('/addproducttourl/{url,}', 'App\Http\Controllers\UrlController@addproduct');
-Route::get('/addproduct/{url}', 'App\Http\Controllers\UrlController@addproduct');
+Route::resource('producturls', ProductUrlController::class);
 
 Route::post('user',[ProductController::class,'Login']);
 Route::view('login','login');

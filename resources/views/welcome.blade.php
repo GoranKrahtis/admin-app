@@ -42,16 +42,19 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="products">Products</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="stores">Stores</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/stores">Stores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="storedproducts">Stored products</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/storedproducts">Stored products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="urls">URLs</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/urls">URLs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/producturls">Prodict-URL connection</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -62,8 +65,8 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-4">Very basic admin panel</h1>
-                    <p class="lead">This is very basic admin panel with very basic bootstrap.</p>
+                    <h1 class="display-4">Basic admin panel</h1>
+                    <p class="lead">Basic admin panel with basic bootstrap.</p>
                 </div>
             </div>
             <!--@if (Route::has('login'))

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\URL;
+use App\Models\StoredProduct;
+use App\Models\ProductUrl;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -27,7 +31,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $urls = DB::table('url')->get();
+        return view('products.create',['urls'=>$urls]);
     }
 
     /**
@@ -44,7 +49,19 @@ class ProductController extends Controller
             'price' => 'required',
         ]);
 
-        Product::create($request->all());
+        $product = new Product();
+        $product->sku = $request->input('sku');
+        $string = $request->input('sku');
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->description = $request->input('description');
+        $product->save();
+        
+        if(!empty($request->input('url'))) {
+            $urlstr = $request->input('url');
+            $url = URL::find($urlstr);
+            $product->URLs()->sync(null,$string,$url->url);
+        }
 
         return redirect()->route('products.index','sku')
             ->with('success', 'Product created successfully.');
@@ -100,6 +117,13 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $storedProducts = StoredProduct::where('sku','==',$product->sku)->paginate(15);
+        //$urlProducts = ProductUrl::where('sku','==',$product->sku);
+        if($storedProducts!=null || $product->URLs->count()>0) {
+            return redirect()->route('products.index')
+            ->with('success', 'Operation not possible!');
+        }
+
         $product->delete();
 
         return redirect()->route('products.index')

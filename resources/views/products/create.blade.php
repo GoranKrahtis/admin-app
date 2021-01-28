@@ -51,6 +51,16 @@
                     <input type="number" name="price" class="form-control" placeholder="Price">
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <select name="url">
+                        <option value=''>Select URL</optiopn>
+                        @foreach($urls as $url)
+                            <option value="{{ $url->url }}">{{ $url->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

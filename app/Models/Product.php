@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\URL;
 
 class Product extends Model
 {
@@ -16,6 +17,6 @@ class Product extends Model
 
     public function URLs()
     {
-        return $this->belongsToMany('App\URL')->withPivot('description');
+        return $this->belongsToMany('App\Models\URL','urltoproduct','sku','url')->withPivot('description');
     }
 }

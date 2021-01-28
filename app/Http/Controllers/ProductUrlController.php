@@ -12,7 +12,7 @@ class ProductUrlController extends Controller
 {
     public function index()
     {        
-        $producturls = ProductUrl::where('url', '!=', null)->paginate(15);
+        $producturls = ProductUrl::where('id', '!=', null)->paginate(15);
 
         return view('producturls.index', compact('producturls'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -20,9 +20,9 @@ class ProductUrlController extends Controller
 
     public function create()
     {
-        $product = DB::table('product')->get();
-        $url = DB::table('url')->get();
-        return view('producturls.create',$product,$url);
+        $products = DB::table('product')->get();
+        $urls = DB::table('url')->get();
+        return view('producturls.create',['products'=>$products,'urls'=>$urls]);
     }
 
     public function store(Request $request)

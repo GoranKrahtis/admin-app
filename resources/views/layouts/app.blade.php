@@ -57,18 +57,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="products">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="stores">Stores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="storedproducts">Stored products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="urls">URLs</a>
-                    </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="http://127.0.0.1:8000/products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/stores">Stores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/storedproducts">Stored products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/urls">URLs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/producturls">Prodict-URL connection</a>
+                        </li>
                     </ul>
                     <span class="navbar-text">
                         Admin panel
@@ -87,12 +90,6 @@
     <div class="container">
         @yield('content')
     </div>-->
-    <div class="text-center footer">
-
-        <h4>+381 64 101 38 08</h4>
-        <h4>goran.krahtis@gmail.com</h4>
-
-    </div>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductUrl extends Model
 {
     use HasFactory;
-    protected $table = 'producttourl';
+    protected $table = 'urltoproduct';
     protected $primaryKey = 'id';
     protected $casts = [
         'id' => 'int',
